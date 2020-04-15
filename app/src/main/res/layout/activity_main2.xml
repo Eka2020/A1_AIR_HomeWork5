@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Main2Activity"
+    tools:context="Main2Activity"
     android:background="@android:color/holo_green_light">
 
     <TextView
         android:id="@+id/main2_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Персональные данные студентов"
+        android:text="Персональные данные студента"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:textAlignment="center"
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:textColor="@android:color/black"
         android:layout_height="wrap_content"
-        android:hint="   ФИО студента"
+        android:hint=" ФИО студента"
         android:paddingBottom="10dp"
         android:textSize="15sp" />
 
@@ -54,7 +54,7 @@
         android:textColor="@android:color/black"
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
-        android:hint="    дата рождения"
+        android:hint=" дата рождения"
         android:textSize="15sp" />
 
     <TextView
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
         android:paddingBottom="10dp"
-        android:hint="    номер телефона"
+        android:hint=" номер телефона"
         android:textSize="15sp" />
 
     <TextView
@@ -87,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:hint="    группа"
+        android:hint=" группа"
         android:textSize="15sp" />
 
     <TextView
@@ -104,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:hint="    курс"
+        android:hint=" курс"
         android:textSize="15sp" />
 
     <LinearLayout
@@ -114,7 +114,7 @@
         android:paddingTop="100dp">
 
         <Button
-            android:id="@+id/main_2_save"
+            android:id="@+id/main_2_close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -124,15 +124,28 @@
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/main_2_Close"
+            android:id="@+id/main_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="Close"
-            android:text="  Сохранить  "
+            android:onClick="Save"
+            android:text="   Сохранить  "
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
+        <Button
+            android:id="@+id/main_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="Change"
+            android:visibility="gone"
+            android:text="Редактировать"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:layout_weight="1"
+            android:textSize="15sp" />
     </LinearLayout>
+
+
 
 </LinearLayout>

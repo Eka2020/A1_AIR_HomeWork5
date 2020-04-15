@@ -14,7 +14,8 @@ import android.widget.TextView;
 public class Main2Activity extends AppCompatActivity implements IonTextClick {
     public static String TEXT_KEY = "text_key";
     SomeClass someClass;
-    EditText editName,  editGroup, editPhone, editAge, editCourse;
+    private EditText editName, editGroup, editPhone, editAge, editCourse;
+    private TextView name, group, phone, age, course;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +28,8 @@ public class Main2Activity extends AppCompatActivity implements IonTextClick {
         editAge = findViewById(R.id.main2_edit4);
         editCourse = findViewById(R.id.main2_edit5);
 
-
-        final Button save = findViewById(R.id.main_2_save);
-        save.setOnClickListener(new View.OnClickListener() {
+        Button close = findViewById(R.id.main_2_close);
+        close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -52,43 +52,60 @@ public class Main2Activity extends AppCompatActivity implements IonTextClick {
             editGroup.setText(someClass.group);
             someClass = (SomeClass) getIntent().getSerializableExtra(TEXT_KEY);
             editCourse.setText(someClass.course);
-
         } else {
             TextView name = findViewById(R.id.main2_name);
             name.setText("Nothing to show");
-            TextView age = findViewById(R.id.main2_age);
-            name.setText("Nothing to show");
-            TextView phone = findViewById(R.id.main2_phone);
-            name.setText("Nothing to show");
-            TextView group = findViewById(R.id.main2_group);
-            name.setText("Nothing to show");
-            TextView course = findViewById(R.id.main2_course);
-            name.setText("Nothing to show");
-         }
+        }
     }
 
-    public void Close(View v) {
-
+    public void Save(View v) {
         someClass.age = editAge.getText().toString();
         someClass.phone = editPhone.getText().toString();
         someClass.group = editGroup.getText().toString();
         someClass.course = editCourse.getText().toString();
-
-        TextView age = (TextView) findViewById(R.id.main2_age);
+        age = findViewById(R.id.main2_age);
         age.setText(someClass.age);
-        TextView phone = (TextView) findViewById(R.id.main2_phone);
+        phone = findViewById(R.id.main2_phone);
         phone.setText(someClass.phone);
-        TextView group = (TextView) findViewById(R.id.main2_group);
+        group = findViewById(R.id.main2_group);
         group.setText(someClass.age);
-        TextView course = (TextView) findViewById(R.id.main2_course);
+        course =  findViewById(R.id.main2_course);
         course.setText(someClass.course);
+
+        Button save = findViewById(R.id.main_save);
+        save.setVisibility(View.GONE);
+        Button change= findViewById(R.id.main_change);
+        change.setVisibility(View.VISIBLE);
     }
 
-    @Override
-    public void onTextClick(SomeClass someClass) {
-        Log.d("ololo", "TEXT " + someClass.position);
-    }
+    public void Change(View v) {
+            editAge.setText("");
+            editName.setText("");
+            editPhone.setText("");
+            editGroup.setText("");
+            editCourse.setText("");
+        age = findViewById(R.id.main2_age);
+        age.setText("");
+        name = findViewById(R.id.main2_name);
+        name.setText("");
+        phone = findViewById(R.id.main2_phone);
+        phone.setText("");
+        group = findViewById(R.id.main2_group);
+        group.setText("");
+        course =  findViewById(R.id.main2_course);
+        course.setText("");
 
-   }
+        Button save = findViewById(R.id.main_save);
+        save.setVisibility(View.VISIBLE);
+        Button change= findViewById(R.id.main_change);
+        change.setVisibility(View.GONE);
+        }
+
+        @Override
+        public void onTextClick (SomeClass someClass){
+            Log.d("ololo", "TEXT " + someClass.position);
+        }
+
+    }
 
 
