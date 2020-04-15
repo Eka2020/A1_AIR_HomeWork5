@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="30dp"
+    android:background="@android:color/holo_green_light"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Журнал преподавателя"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:background="#1B681E"
+        android:textAlignment="center"
+        android:textAllCaps="false"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:src="@drawable/image" />
+
+    <Button
+        android:id="@+id/open_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Перейти к приложению"
+        android:textAllCaps="false"
+        android:onClick="OnClick"
+        android:textSize="20sp"/>
+
+</LinearLayout>
