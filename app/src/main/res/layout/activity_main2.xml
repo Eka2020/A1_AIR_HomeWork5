@@ -4,74 +4,136 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
     android:orientation="vertical"
-    tools:context="Main2Activity"
-    android:background="@android:color/holo_green_light">
+    tools:context="Main2Activity">
 
     <TextView
         android:id="@+id/main2_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Персональные данные студента"
+        android:background="#146317"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
+        android:text="Персональные данные студента"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
         android:textAllCaps="false"
-        android:background="#146317"
-        android:textSize="20sp" />
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/main2_name"
-        android:paddingTop="10dp"
-        android:layout_width="wrap_content"
-        android:textColor="@android:color/black"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="15sp" />
-
-    <EditText
-        android:id="@+id/main2_edit1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:textColor="@android:color/black"
-        android:layout_height="wrap_content"
-        android:hint=" ФИО студента"
-        android:paddingBottom="10dp"
-        android:textSize="15sp" />
+        android:layout_height="179dp"
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/main2_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
 
-    <EditText
-        android:id="@+id/main2_edit4"
-        android:layout_width="match_parent"
-        android:textColor="@android:color/black"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp"
-        android:hint=" дата рождения"
-        android:textSize="15sp" />
+            <TextView
+                android:id="@+id/main2_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/main2_edit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint=" ФИО студента"
+                android:paddingBottom="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/main2_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <EditText
+                android:id="@+id/main2_edit4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" дата рождения"
+                android:paddingBottom="10dp"
+                android:textColor="@android:color/black"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/main2_image"
+                android:layout_width="138dp"
+                android:layout_height="137dp"
+                android:paddingRight="0dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/image_preview"
+                    android:layout_width="123dp"
+                    android:layout_height="42dp"
+                    android:layout_weight="1"
+                    android:onClick="image_preview"
+                    android:textAllCaps="false"
+                    android:text="пред"
+                    tools:ignore="OnClick" />
+
+                <Button
+                    android:id="@+id/image_next"
+                    android:layout_width="128dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="image_next"
+                    android:textAllCaps="false"
+                    android:paddingRight="0dp"
+                    android:text="след" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/main2_phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/main2_edit3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:paddingBottom="10dp"
         android:hint=" номер телефона"
+        android:paddingBottom="10dp"
+        android:textColor="@android:color/black"
         android:textSize="15sp" />
 
     <TextView
@@ -79,32 +141,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/main2_edit2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:hint=" группа"
+        android:textColor="@android:color/black"
         android:textSize="15sp" />
 
     <TextView
         android:id="@+id/main2_course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:paddingTop="10dp"
-        android:textStyle="bold"
-        android:textSize="15sp" />
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/main2_edit5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
         android:hint=" курс"
+        android:textColor="@android:color/black"
         android:textSize="15sp" />
 
     <LinearLayout
@@ -133,19 +195,19 @@
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="15sp" />
+
         <Button
             android:id="@+id/main_change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:onClick="Change"
-            android:visibility="gone"
             android:text="Редактировать"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
-            android:layout_weight="1"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:visibility="gone" />
     </LinearLayout>
-
 
 
 </LinearLayout>
